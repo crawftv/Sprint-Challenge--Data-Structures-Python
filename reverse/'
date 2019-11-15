@@ -50,15 +50,13 @@ class LinkedList:
         return 
     n1 = self.head
     n2 = self.head.next_node
-    n3 = n2.get_next()
+    n3 = n2.next_node
     n1.set_next(None)
     while n3.next_node is not None:
         n2.set_next(n1)
         n1 = n2
         n2 =n3
-        n3 = n3.get_next()
+        n3 = n3.next_node
     else:
-        n3.set_next(n2)
-        n2.set_next(n1)
         self.head = n3
     return
